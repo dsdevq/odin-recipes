@@ -1,0 +1,42 @@
+@import '~@csstools/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+// Global reset
+body, h1, p, input, *, a{
+  font-family: 'Inter', sans-serif;
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+// Title global
+.title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: clamp(1rem, 10vw, 3.437rem); 
+  line-height: 67px;
+  text-align: center;
+}
+
+[class*=__container] {
+  max-width: 1012px;
+  margin: 0px auto;
+}
+
+// Padding container media
+
+@media (max-width: 768px) {
+  [class*=__container] {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 360px) {
+  [class*=__container] {
+    padding: 0 16px;
+  }
+}

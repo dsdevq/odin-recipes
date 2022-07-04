@@ -1,0 +1,41 @@
+$backgroundColor: #FFC700;
+$textColor: #000000;
+
+.header {
+  background-color: $backgroundColor;
+  min-height: 506px;
+  &__container {
+    display: flex;
+    flex-shrink: 100px;
+    flex-wrap: wrap;
+  }
+  &__information {
+    display: flex;
+    flex: 1;
+    padding: 51px 55px 80px 60px;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  &__icons {
+    display: flex;
+    gap: 21px;
+  }
+  &__title {}
+  &__decor {
+    display: flex;
+    max-width: 100%;
+  }
+}
+.icons-box {
+  &__item {}
+  &__link {}
+  &__image {}
+}
+.title {
+}
+.decor {
+  &__image {
+    display: flex;
+    max-width: 491px;
+  }
+}
