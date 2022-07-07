@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/odin-recipes/static/css/main.d70c06c0.css",
+    "main.js": "/odin-recipes/static/js/main.325d9f64.js",
+    "index.html": "/odin-recipes/index.html",
+    "main.d70c06c0.css.map": "/odin-recipes/static/css/main.d70c06c0.css.map",
+    "main.325d9f64.js.map": "/odin-recipes/static/js/main.325d9f64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d70c06c0.css",
+    "static/js/main.325d9f64.js"
+  ]
+}
