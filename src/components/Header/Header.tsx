@@ -9,7 +9,7 @@ import './Header.scss'
 // Сделать Title Component и в него передавать title
 
 
-export default function Header({ image, title, isVegan, isVeg, isGlutenFree, style} : any) {
+export default function Header({ image, title, isVegan, isVeg, isGlutenFree, style }: any) {
 
   return (
     <header className="header" style={style}>
@@ -17,19 +17,19 @@ export default function Header({ image, title, isVegan, isVeg, isGlutenFree, sty
         <div className="header__information">
           <ul className="header__icons icons-box">
             {
-              isVegan 
-              ? 
-              <Icon image={vegan} />
-              :
-              isVeg 
-              ?
-              <Icon image={vegeterian} />
-              :
-              isGlutenFree 
-              ?
-              <Icon image={gluten} />
-              : 
-              false
+              isVegan
+                ?
+                <Icon image={vegan} />
+                :
+                isVeg
+                  ?
+                  <Icon image={vegeterian} />
+                  :
+                  isGlutenFree
+                    ?
+                    <Icon image={gluten} />
+                    :
+                    false
             }
           </ul>
           <h1 className="header__title title">

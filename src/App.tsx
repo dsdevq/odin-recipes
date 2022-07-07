@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 
+
 import {
   Accordion,
   AccordionItem,
@@ -18,6 +19,16 @@ interface colorType {
 
 
 const API_KEY = `920a7fb04c7c4ee1a1dc65b9a1a60722`
+
+interface Recipes {
+  id: number;
+  vegetarian: boolean;
+  glutenFree: boolean;
+  image: string;
+  title: string;
+  analyzedInstructions: any;
+  vegan: boolean;
+}
 
 
 const colors: colorType = {
@@ -37,7 +48,7 @@ const randomRecipes = `https://api.spoonacular.com/recipes/random?apiKey=${API_K
 
 function App() {
 
-  const [recipes, setRecipes] = useState<any[]>()
+  const [recipes, setRecipes] = useState<Recipes[]>()
 
   useEffect(() => {
     getRecipes(randomRecipes)
@@ -47,19 +58,18 @@ function App() {
     const response = await fetch(API)
     const result = await response.json()
     const recipes = result.recipes
-    console.log(recipes)
     setRecipes(recipes)
   }
 
-  const setColor = (indx: any) => {
-    const secondNumber = indx.toString().split('') 
+  const setColor = (indx: number) => {
+    const secondNumber = indx.toString().split('')
     return secondNumber[secondNumber.length - 1]
   }
 
   return (
     <div className="App">
       <Accordion allowZeroExpanded>
-        {recipes?.length && recipes.map((recipe, index): any => (
+        {recipes?.length && recipes.map((recipe: Recipes, index: number) => (
           <AccordionItem key={recipe.id}>
             <AccordionItemHeading>
               <AccordionItemButton >
@@ -67,13 +77,13 @@ function App() {
                 <Header
                   style={
                     colors[index] ?
-                    {
-                      backgroundColor: colors[index]
-                    }
-                    :
-                    {
-                      backgroundColor: colors[setColor(index)]
-                    }
+                      {
+                        backgroundColor: colors[index]
+                      }
+                      :
+                      {
+                        backgroundColor: colors[setColor(index)]
+                      }
                   }
                   isVeg={recipe.vegetarian}
                   isVegan={recipe.vegan}

@@ -4,16 +4,14 @@ interface Image {
   image: string
 }
 
-export default function Icon( { image  } : Image) {
+export default function Icon({ image }: Image) {
   return (
     <li className="icons-box__item">
-      {/* <a className="icons-box__link"> */}
-        <img 
-        src={image} 
-        alt="Icon" 
-        className="icons-box__image" 
-        />
-      {/* </a> */}
+      <img
+        src={image}
+        alt="Icon"
+        className="icons-box__image"
+      />
     </li>
   )
 }
