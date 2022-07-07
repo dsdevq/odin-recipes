@@ -36,6 +36,7 @@
   &__contentbox {
     display: grid;
     column-gap: 30px;
+    row-gap: 48px;
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-start;
   }
@@ -48,6 +49,7 @@
     font-size: 24px;
     color: #222222;
     line-height: 133%;
+    text-transform: capitalize;
   }
 }
 .instructions {
