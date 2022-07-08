@@ -62,8 +62,13 @@ function App() {
   }
 
   const setColor = (indx: number) => {
-    const secondNumber = indx.toString().split('')
-    return secondNumber[secondNumber.length - 1]
+    if (colors[indx]) {
+      return indx
+    }
+    else {
+      const secondNumber = indx.toString().split('')
+      return secondNumber[secondNumber.length - 1]
+    }
   }
 
   return (
@@ -76,14 +81,9 @@ function App() {
                 {/* Куда необходимо нажать */}
                 <Header
                   style={
-                    colors[index] ?
-                      {
-                        backgroundColor: colors[index]
-                      }
-                      :
-                      {
-                        backgroundColor: colors[setColor(index)]
-                      }
+                    {
+                      backgroundColor: colors[setColor(index)]
+                    }
                   }
                   isVeg={recipe.vegetarian}
                   isVegan={recipe.vegan}

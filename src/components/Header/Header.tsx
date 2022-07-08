@@ -8,8 +8,17 @@ import './Header.scss'
 // Сделать функцию getImages, через map передать их в Icon component
 // Сделать Title Component и в него передавать title
 
+interface HeaderProps {
+  image: string,
+  title: string,
+  isVegan: boolean,
+  isVeg: boolean,
+  isGlutenFree: boolean,
+  style: object
+}
 
-export default function Header({ image, title, isVegan, isVeg, isGlutenFree, style }: any) {
+
+export default function Header({ image, title, isVegan, isVeg, isGlutenFree, style }: HeaderProps) {
 
   return (
     <header className="header" style={style}>
@@ -17,23 +26,16 @@ export default function Header({ image, title, isVegan, isVeg, isGlutenFree, sty
         <div className="header__information">
           <ul className="header__icons icons-box">
             {
-              isVegan
-                ?
-                <Icon image={vegan} />
+              isVegan ? <Icon image={vegan} />
                 :
-                isVeg
-                  ?
-                  <Icon image={vegeterian} />
+                isVeg ? <Icon image={vegeterian} />
                   :
-                  isGlutenFree
-                    ?
-                    <Icon image={gluten} />
-                    :
-                    false
+                  isGlutenFree &&
+                  <Icon image={gluten} />
             }
           </ul>
           <h1 className="header__title title">
-            {title || 'Sweet Spicy Lettuce Wraps'}
+            {title}
           </h1>
         </div>
         <div className="header__decor decor">

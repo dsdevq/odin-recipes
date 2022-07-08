@@ -1,13 +1,12 @@
-$backgroundColor: #FFC700;
 $textColor: #000000;
 
 .header {
-  background-color: $backgroundColor;
   &__container {
     display: flex;
     flex-shrink: 100px;
     flex-wrap: wrap;
   }
+
   &__information {
     display: flex;
     flex: 1;
@@ -15,23 +14,30 @@ $textColor: #000000;
     gap: 20px;
     flex-direction: column;
   }
+
   &__icons {
     display: flex;
     gap: 21px;
   }
+
   &__title {}
+
   &__decor {
     display: flex;
     max-width: 100%;
   }
 }
+
 .icons-box {
   &__item {}
+
   &__link {}
+
   &__image {}
 }
-.title {
-}
+
+.title {}
+
 .decor {
   &__image {
     display: flex;

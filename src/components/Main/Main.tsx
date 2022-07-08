@@ -1,6 +1,11 @@
 import React from 'react'
 import './Main.scss'
 
+interface Step {
+  ingredients: Array<object>
+}
+
+
 export default function Main({ analyzedInstructions }: any) {
   return (
     <main className="main">
@@ -12,21 +17,19 @@ export default function Main({ analyzedInstructions }: any) {
           <div className="ingredients__contentbox contentbox-ingredients">
             <div className="contentbox-ingredients__contentbox">
               {
-                analyzedInstructions?.length && analyzedInstructions.map((step: any, index: number) =>
-                  step.ingredients.length ?
-                    (
-                      <ul className="contentbox-ingredients__ingredients" key={index}>
-                        {
-                          step.ingredients.map((ingredient: any, index: number) => (
-                            <li className="contentbox-ingredients__item" key={index}>
-                              {ingredient.name}
-                            </li>
-                          ))
-                        }
-                      </ul>
-                    )
-                    :
-                    null
+                analyzedInstructions?.length && analyzedInstructions.map((step: Step, index: number) =>
+                  step.ingredients.length &&
+                  (
+                    <ul className="contentbox-ingredients__ingredients" key={index}>
+                      {
+                        step.ingredients.map((ingredient: any, index: number) => (
+                          <li className="contentbox-ingredients__item" key={index}>
+                            {ingredient.name}
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  )
                 )
               }
             </div>
