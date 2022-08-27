@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss'
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -40,9 +40,17 @@ const colors: colorType = {
   5: '#FFC700',
   6: '#C7B9FF',
   7: '#A259FF',
-  8: '#FFFFFF'
+  8: '#FFFFFF',
+  9: '#999999',
 }
-// const AUTH = `https://api.spoonacular.com/recipes/716429/information?apiKey=${API_KEY}&includeNutrition=true.`
+const setColor = (indx: number) => {
+  if (colors[indx]) {
+    return indx
+  }
+  else {
+    return indx.toString()[indx.toString().length - 1]
+  }
+}
 
 const randomRecipes = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=50&tags=vegetarian,dessert`
 
@@ -57,19 +65,10 @@ function App() {
   const getRecipes = async (API: string) => {
     const response = await fetch(API)
     const result = await response.json()
-    const recipes = result.recipes
-    setRecipes(recipes)
+    console.log(result)
+    setRecipes(result.recipes)
   }
 
-  const setColor = (indx: number) => {
-    if (colors[indx]) {
-      return indx
-    }
-    else {
-      const secondNumber = indx.toString().split('')
-      return secondNumber[secondNumber.length - 1]
-    }
-  }
 
   return (
     <div className="App">

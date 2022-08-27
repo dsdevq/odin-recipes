@@ -1,4 +1,3 @@
-import React from 'react'
 import './Main.scss'
 
 interface Step {
@@ -18,18 +17,17 @@ export default function Main({ analyzedInstructions }: any) {
             <div className="contentbox-ingredients__contentbox">
               {
                 analyzedInstructions?.length && analyzedInstructions.map((step: Step, index: number) =>
-                  step.ingredients.length &&
-                  (
-                    <ul className="contentbox-ingredients__ingredients" key={index}>
-                      {
-                        step.ingredients.map((ingredient: any, index: number) => (
-                          <li className="contentbox-ingredients__item" key={index}>
-                            {ingredient.name}
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  )
+                (
+                  <ul className="contentbox-ingredients__ingredients" key={index}>
+                    {
+                      step.ingredients.map((ingredient: any, index: number) => (
+                        <li className="contentbox-ingredients__item" key={index}>
+                          {ingredient.name}
+                        </li>
+                      ))
+                    }
+                  </ul>
+                )
                 )
               }
             </div>

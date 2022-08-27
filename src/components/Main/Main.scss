@@ -1,81 +1,67 @@
 .title-main {
-  font-weight: 800;
-  font-size: clamp(1rem, 10vw, 2.25rem);
-  line-height: 149.02%;
-  padding-top: 76px;
-  padding-bottom: 30px;
-  // padding-top: calc(46px + 1.595vw);
-  // padding-bottom: calc(30px + 1.1625vw);
-  // padding-left: calc(57px + 1.5625vw);
+	font-weight: 800;
+	font-size: clamp(1rem, 10vw, 2.25rem);
+	line-height: 149.02%;
+	padding-top: 76px;
+	padding-bottom: 30px;
 }
 
 .subtitle-main {
-  font-weight: 700;
-  font-size: 24px;
-  font-size: clamp(1rem, 10vw, 1.5rem);
-  line-height: 149.02%;
-  padding-top: 46px;
-  padding-bottom: 38px;
+	font-weight: 700;
+	font-size: 24px;
+	font-size: clamp(1rem, 10vw, 1.5rem);
+	line-height: 149.02%;
+	padding-top: 46px;
+	padding-bottom: 38px;
 }
 
-
 .main {
-  padding: 0 60px;
-  background-color: whitesmoke;
-
-  &__ingredients {}
-
-  &__instuctions {}
+	padding: 0 60px;
+	background-color: whitesmoke;
 }
 
 .ingredients {
-  &__container {}
-
-  &__title {}
-
-  &__contentbox {
-    display: flex;
-    flex-direction: column;
-  }
+	&__contentbox {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .contentbox-ingredients {
-  &__contentbox {
-    display: grid;
-    column-gap: 30px;
-    row-gap: 48px;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: flex-start;
-  }
+	&__contentbox {
+		display: grid;
+		column-gap: 30px;
+		row-gap: 48px;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: flex-start;
+	}
 
-  &__ingredients {
-    display: grid;
-    row-gap: 48px;
-  }
+	&__ingredients {
+		display: grid;
+		row-gap: 48px;
+	}
 
-  &__item {
-    font-weight: 500;
-    font-size: 24px;
-    color: #222222;
-    line-height: 133%;
-    text-transform: capitalize;
-  }
+	&__item {
+		font-weight: 500;
+		font-size: 24px;
+		color: #222222;
+		line-height: 133%;
+		text-transform: capitalize;
+	}
 }
 
 .instructions {
-  &__container {}
-
-  &__textbox {
-    display: grid;
-    row-gap: 50px;
-    padding-bottom: 50px;
-  }
+	&__textbox {
+		display: grid;
+		row-gap: 50px;
+		padding-bottom: 50px;
+	}
 }
 
 .textbox-instructions {
-  &__text {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 133%;
-  }
+	&__text {
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 133%;
+	}
 }

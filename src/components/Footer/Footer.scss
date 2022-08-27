@@ -1,20 +1,19 @@
 .footer {
-  background: #C7B9FF;
-  padding: 60px 0;
-  &__container {
-    display: grid;
-    place-content: center;
-    justify-items: center;
-    row-gap: 30px;
-  }
-  &__img {}
-  &__text {
-    color: #222222;
-    font-size: 24px;
-    line-height: 133%;
-    text-decoration: underline;
-    span {
-      font-weight: 700;
-    }
-  }
+	background: #c7b9ff;
+	padding: 60px 0;
+	&__container {
+		display: grid;
+		place-content: center;
+		justify-items: center;
+		row-gap: 30px;
+	}
+	&__text {
+		color: #222222;
+		font-size: 24px;
+		line-height: 133%;
+		text-decoration: underline;
+		span {
+			font-weight: 700;
+		}
+	}
 }

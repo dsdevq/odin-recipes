@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Icon from './components/Icon'
 import gluten from '../../assets/gluten-free.png'
 import vegan from '../../assets/vegan.png'
@@ -39,7 +38,7 @@ export default function Header({ image, title, isVegan, isVeg, isGlutenFree, sty
           </h1>
         </div>
         <div className="header__decor decor">
-          <img src={image} alt="Photo" className="decor__image" />
+          <img src={image} alt="Decor" className="decor__image" />
         </div>
       </div>
     </header>
