@@ -65,7 +65,6 @@ function App() {
   const getRecipes = async (API: string) => {
     const response = await fetch(API)
     const result = await response.json()
-    console.log(result)
     setRecipes(result.recipes)
   }
 
