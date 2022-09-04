@@ -1,6 +1,6 @@
 import Icon from './components/Icon'
 import gluten from '../../assets/gluten-free.png'
-import vegan from '../../assets/vegan.png'
+import veganImg from '../../assets/vegan.png'
 import vegeterian from '../../assets/vegetarian.png'
 import './Header.scss'
 
@@ -10,14 +10,14 @@ import './Header.scss'
 interface HeaderProps {
   image: string,
   title: string,
-  isVegan: boolean,
-  isVeg: boolean,
-  isGlutenFree: boolean,
+  vegan: boolean,
+  vegetarian: boolean,
+  glutenFree: boolean,
   style: object
 }
 
 
-export default function Header({ image, title, isVegan, isVeg, isGlutenFree, style }: HeaderProps) {
+export default function Header({ image, title, vegan, vegetarian, glutenFree, style }: HeaderProps) {
 
   return (
     <header className="header" style={style}>
@@ -25,11 +25,11 @@ export default function Header({ image, title, isVegan, isVeg, isGlutenFree, sty
         <div className="header__information">
           <ul className="header__icons icons-box">
             {
-              isVegan ? <Icon image={vegan} />
+              vegan ? <Icon image={veganImg} />
                 :
-                isVeg ? <Icon image={vegeterian} />
+                vegetarian ? <Icon image={vegeterian} />
                   :
-                  isGlutenFree &&
+                  glutenFree &&
                   <Icon image={gluten} />
             }
           </ul>

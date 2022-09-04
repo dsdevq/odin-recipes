@@ -1,54 +1,16 @@
+import { Instructions } from '../../App'
+import { InstructionsComponent } from '../Instructions'
 import './Main.scss'
 
-interface Step {
-  ingredients: Array<object>
-}
 
 
-export default function Main({ analyzedInstructions }: any) {
+export default function Main({ steps }: Instructions) {
   return (
     <main className="main">
       <section className="main__ingredients ingredients">
-        <div className="ingredients__container">
-          <div className="ingredients__title title-main">
-            Ingredients
-          </div>
-          <div className="ingredients__contentbox contentbox-ingredients">
-            <div className="contentbox-ingredients__contentbox">
-              {
-                analyzedInstructions?.length && analyzedInstructions.map((step: Step, index: number) =>
-                (
-                  <ul className="contentbox-ingredients__ingredients" key={index}>
-                    {
-                      step.ingredients.map((ingredient: any, index: number) => (
-                        <li className="contentbox-ingredients__item" key={index}>
-                          {ingredient.name}
-                        </li>
-                      ))
-                    }
-                  </ul>
-                )
-                )
-              }
-            </div>
-          </div>
-        </div>
       </section>
       <section className="main__instuctions instructions">
-        <div className="instructions__container">
-          <div className="instructions__title title-main">
-            Instructions
-          </div>
-          <div className="instructions__textbox textbox-instructions">
-            {
-              analyzedInstructions?.length && analyzedInstructions.map((step: any, index: number) => (
-                <p className="textbox-instructions__text" key={index}>
-                  {step.number}. {step.step}
-                </p>
-              ))
-            }
-          </div>
-        </div>
+        <InstructionsComponent steps={steps} />
       </section>
     </main>
   )

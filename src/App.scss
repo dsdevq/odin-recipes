@@ -1,5 +1,5 @@
-@import '~@csstools/normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "~@csstools/normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 // Global reset
 body,
@@ -8,57 +8,60 @@ p,
 input,
 *,
 a {
-  font-family: 'Inter', sans-serif;
+	font-family: "Inter", sans-serif;
 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	list-style: none;
 }
 
 // Title global
 .title {
-  font-style: normal;
-  font-weight: 800;
-  font-size: clamp(1rem, 10vw, 3.437rem);
-  line-height: 67px;
-  text-align: center;
+	font-style: normal;
+	font-weight: 800;
+	font-size: clamp(1rem, 10vw, 3.437rem);
+	line-height: 67px;
+	text-align: center;
 }
 
-[class*=__container] {
-  max-width: 1012px;
-  margin: 0px auto;
+[class*="__container"] {
+	max-width: 1012px;
+	margin: 0px auto;
 }
 
 // Padding container media
 
 @media (max-width: 768px) {
-  [class*=__container] {
-    padding: 0 32px;
-  }
+	[class*="__container"] {
+		padding: 0 32px;
+	}
 }
 
 @media (max-width: 360px) {
-  [class*=__container] {
-    padding: 0 16px;
-  }
+	[class*="__container"] {
+		padding: 0 16px;
+	}
 }
 
 @keyframes slidein {
-  from {
-    transform: translateX(-50%);
-  }
+	from {
+		transform: translateY(-2%);
+	}
 
-  to {
-    transform: translateX(0%);
-  }
+	to {
+		transform: translateY(0%);
+	}
 }
 
 .accordion {
-  &__panel {
-    animation: slidein 0.35s ease-in;
-  }
+	z-index: -1;
+
+	&__panel {
+		z-index: -1;
+		animation: slidein 0.35s ease-in;
+	}
 }

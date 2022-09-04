@@ -14,22 +14,38 @@ import {
 } from 'react-accessible-accordion';
 
 interface colorType {
-  [key: string]: string | undefined
+  [key: string]: string
 }
 
 
 const API_KEY = `920a7fb04c7c4ee1a1dc65b9a1a60722`
 
-interface Recipes {
+export interface Recipes {
   id: number;
   vegetarian: boolean;
   glutenFree: boolean;
   image: string;
   title: string;
-  analyzedInstructions: any;
+  analyzedInstructions: Instructions[]
   vegan: boolean;
 }
 
+//! analyzedInstructions
+export interface Instructions {
+  name?: string
+  steps: Step[]
+}
+
+export interface Step {
+  number?: string
+  step?: string
+  ingredients: Ingredient[]
+}
+
+export interface Ingredient {
+  id: number
+  name: string
+}
 
 const colors: colorType = {
   0: '#F24E1E',
@@ -64,35 +80,30 @@ function App() {
 
   const getRecipes = async (API: string) => {
     const response = await fetch(API)
-    const result = await response.json()
-    setRecipes(result.recipes)
+    const { recipes } = await response.json()
+    setRecipes(recipes)
   }
 
 
   return (
     <div className="App">
       <Accordion allowZeroExpanded>
-        {recipes?.length && recipes.map((recipe: Recipes, index: number) => (
-          <AccordionItem key={recipe.id}>
+        {recipes?.length && recipes.map(({ id, analyzedInstructions, ...rest }: Recipes, index) => (
+          <AccordionItem key={id}>
             <AccordionItemHeading>
               <AccordionItemButton >
-                {/* Куда необходимо нажать */}
                 <Header
                   style={
                     {
                       backgroundColor: colors[setColor(index)]
                     }
                   }
-                  isVeg={recipe.vegetarian}
-                  isVegan={recipe.vegan}
-                  isGlutenFree={recipe.glutenFree}
-                  image={recipe.image}
-                  title={recipe.title} />
+                  {...rest}
+                />
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              {/* Что отображается при нажатии */}
-              <Main analyzedInstructions={recipe.analyzedInstructions[0].steps} />
+              <Main steps={analyzedInstructions[0].steps} />
             </AccordionItemPanel>
           </AccordionItem>
         )
