@@ -1,7 +1,4 @@
-// ! Steps => Step + Ingredients 
-
 import { Ingredient, Step } from "../App"
-
 
 export const Ingredients = ({ ingredients }: Step) => {
   return (
@@ -14,6 +11,5 @@ export const Ingredients = ({ ingredients }: Step) => {
         ))
       }
     </ul>
-
   )
 }

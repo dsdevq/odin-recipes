@@ -22,12 +22,9 @@ const API_KEY = `920a7fb04c7c4ee1a1dc65b9a1a60722`
 
 export interface Recipes {
   id: number;
-  vegetarian: boolean;
-  glutenFree: boolean;
   image: string;
   title: string;
   analyzedInstructions: Instructions[]
-  vegan: boolean;
 }
 
 //! analyzedInstructions
