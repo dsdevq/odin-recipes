@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/odin-recipes/static/css/main.cf29bc31.css",
-    "main.js": "/odin-recipes/static/js/main.0fddeaac.js",
+    "main.css": "/odin-recipes/static/css/main.255aeabf.css",
+    "main.js": "/odin-recipes/static/js/main.1e890632.js",
     "index.html": "/odin-recipes/index.html",
-    "main.cf29bc31.css.map": "/odin-recipes/static/css/main.cf29bc31.css.map",
-    "main.0fddeaac.js.map": "/odin-recipes/static/js/main.0fddeaac.js.map"
+    "main.255aeabf.css.map": "/odin-recipes/static/css/main.255aeabf.css.map",
+    "main.1e890632.js.map": "/odin-recipes/static/js/main.1e890632.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf29bc31.css",
-    "static/js/main.0fddeaac.js"
+    "static/css/main.255aeabf.css",
+    "static/js/main.1e890632.js"
   ]
 }
